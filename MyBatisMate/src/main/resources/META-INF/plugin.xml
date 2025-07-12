@@ -1,35 +1,47 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>com.qmvector.plugin.MyBatisMate</id>
-
-    <!-- Public plugin name should be written in Title Case.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <id>com.qm.plugin.MyBatisMate</id>
     <name>MyBatisMate</name>
+    <vendor url="https://github.com/GradyJean/QmBase-Plugin" email="grady.jean.king@gmail.com">QmBase</vendor>
+    <description>
+        MyBatisMate 是一个基于 IntelliJ IDEA 平台、专为 MyBatis 场景开发的辅助插件，旨在大幅提升开发效率与体验。
 
-    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.qmvector.com">qm-vector</vendor>
+        插件核心特性：
+        - 基于 IDEA 的数据库连接能力，自动识别表结构、字段类型
+        - 一键生成 MyBatis 对应的 PO、Mapper 接口、XML 文件
+        - 支持智能插入 ResultMap、SQL 映射模板，减少重复编码
+        - 提供快速跳转、代码补全、方法注解等实用功能
+        - 集成生成逻辑，可根据项目规范自定义输出路径、命名规则
 
-    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
-    <description>自动生成 Mybatis 中的 Mapper XML PO 类</description>
+        适用场景：
+        - 快速开发 MyBatis 模块（尤其适用于 DDD 分层结构）
+        - 替代手写 XML、PO、Mapper 等重复工作
+        - 想要将数据库结构与代码映射统一管理的团队与个人开发者
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+        插件完全运行于 IntelliJ IDEA 中，支持最新版本，无需额外配置。
+
+        本插件将数据库能力与代码生成逻辑高度结合，助你构建更清晰、更高效的后端开发流程。
+    </description>
+
+    <change-notes>
+        初始版本 1.0.0：
+        - 支持一键生成 MyBatis PO、Mapper、XML 文件
+        - 支持 SQL 自动补全与模板生成
+        - 支持 结构配置与定制路径生成
+    </change-notes>
+
+    <version>1.0.0</version>
+    <idea-version since-build="232" until-build="241.*"/>
+
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.database</depends>
-    <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
     <actions>
-        <!-- Actions defined by the plugin.
-             Read more: https://plugins.jetbrains.com/docs/intellij/plugin-actions.html -->
         <action id="MyBatisMate.database.launcher.action"
-                class="com.qmvector.plugin.mybatismate.action.LauncherMenuAction"
-                text="MyBatis生成器"
-                description="MyBatisMate 生成器">
+                class="com.qm.plugin.mybatismate.action.LauncherMenuAction"
+                text="MyBatis 生成器"
+                description="MyBatis 生成器">
             <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
         </action>
     </actions>

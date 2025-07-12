@@ -4,8 +4,8 @@ plugins {
     id("org.jetbrains.intellij.platform") version "2.5.0"
 }
 
-group = "com.qmvector.plugin"
-version = "1.0-SNAPSHOT"
+group = "com.qm-vector.plugin"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -14,15 +14,11 @@ repositories {
     }
 }
 
-// Configure IntelliJ Platform Gradle Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     intellijPlatform {
         intellijIdeaUltimate("2025.1.3")
         bundledPlugin("com.intellij.database")
         bundledPlugin("com.intellij.java")
-        // Add necessary plugin dependencies for compilation here, example:
-        // bundledPlugin("com.intellij.java")
     }
 }
 
@@ -33,7 +29,8 @@ intellijPlatform {
         }
 
         changeNotes = """
-            Initial version
+        一个用于 MyBatis 框架的代码辅助插件。
+        提供自动生成 mapper、PO、XML 等能力，极大提升开发效率。
         """.trimIndent()
     }
 }
