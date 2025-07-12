@@ -3,34 +3,33 @@
 
     <name>MyBatisMate</name>
     <vendor url="https://github.com/GradyJean/QmBase-Plugin" email="grady.jean.king@gmail.com">QmBase</vendor>
-    <description>
-        MyBatisMate is a powerful plugin for IntelliJ IDEA, designed to significantly enhance development efficiency in
-        MyBatis-based projects.
+    <description><![CDATA[
+        <b>MyBatisMate</b> is a powerful plugin for IntelliJ IDEA that enhances productivity when working on MyBatis-based projects.
+        <br><br>
+        <b>🔧 Key Features:</b><br>
+        - Auto-detects database schemas and column types<br>
+        - Generates POJOs, Mapper interfaces, and XML with one click<br>
+        - Inserts ResultMaps and SQL templates to reduce boilerplate<br>
+        - Supports navigation, code completion, and annotations<br>
+        - Customizable naming and output paths<br><br>
 
-        🔧 Key Features:
-        - Automatically detects database schema and column types using IDEA's native database connectivity
-        - One-click generation of POJOs, Mapper interfaces, and XML files for MyBatis
-        - Supports intelligent insertion of ResultMaps and SQL templates to reduce repetitive coding
-        - Enables fast navigation, code completion, and annotations for MyBatis methods
-        - Customizable naming strategies and output paths tailored to your project structure
+        <b>🎯 Ideal for:</b><br>
+        - Fast MyBatis module scaffolding<br>
+        - Reducing repetitive work for Mapper, PO, and XML files<br>
+        - Teams needing consistent DB-to-code mapping<br><br>
 
-        🎯 Suitable Scenarios:
-        - Rapid MyBatis module development
-        - Replacing repetitive manual work for XML, PO, and Mapper files
-        - Ideal for developers and teams seeking unified database-to-code mapping
-
-        MyBatisMate runs entirely within IntelliJ IDEA (latest version supported) without any additional configuration.
-
-        This plugin tightly integrates database capabilities with code generation logic to help you build a cleaner and
-        more efficient backend development process.
+        Runs fully inside IntelliJ IDEA with no extra config.
+                ]]>
     </description>
 
     <change-notes>
-        Version 1.0.0:
-        - Initial release with core features
-        - Supports one-click generation of MyBatis PO, Mapper, and XML files
-        - Includes SQL auto-completion and template generation
-        - Enables structure-based configuration and custom output paths
+        <![CDATA[
+        <b>Version 1.0.0:</b><br>
+        - Initial release with core features<br>
+        - Supports one-click generation of MyBatis PO, Mapper, and XML files<br>
+        - Includes SQL auto-completion and template generation<br>
+        - Enables structure-based configuration and custom output paths<br>
+         ]]>
     </change-notes>
     <resource-bundle>messages.MyBatisMateBundle</resource-bundle>
     <version>1.0.0</version>
