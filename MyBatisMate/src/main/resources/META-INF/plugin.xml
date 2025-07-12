@@ -1,34 +1,38 @@
 <idea-plugin>
     <id>com.qm.plugin.MyBatisMate</id>
+
     <name>MyBatisMate</name>
     <vendor url="https://github.com/GradyJean/QmBase-Plugin" email="grady.jean.king@gmail.com">QmBase</vendor>
     <description>
-        MyBatisMate 是一个基于 IntelliJ IDEA 平台、专为 MyBatis 场景开发的辅助插件，旨在大幅提升开发效率与体验。
+        MyBatisMate is a powerful plugin for IntelliJ IDEA, designed to significantly enhance development efficiency in
+        MyBatis-based projects.
 
-        插件核心特性：
-        - 基于 IDEA 的数据库连接能力，自动识别表结构、字段类型
-        - 一键生成 MyBatis 对应的 PO、Mapper 接口、XML 文件
-        - 支持智能插入 ResultMap、SQL 映射模板，减少重复编码
-        - 提供快速跳转、代码补全、方法注解等实用功能
-        - 集成生成逻辑，可根据项目规范自定义输出路径、命名规则
+        🔧 Key Features:
+        - Automatically detects database schema and column types using IDEA's native database connectivity
+        - One-click generation of POJOs, Mapper interfaces, and XML files for MyBatis
+        - Supports intelligent insertion of ResultMaps and SQL templates to reduce repetitive coding
+        - Enables fast navigation, code completion, and annotations for MyBatis methods
+        - Customizable naming strategies and output paths tailored to your project structure
 
-        适用场景：
-        - 快速开发 MyBatis 模块（尤其适用于 DDD 分层结构）
-        - 替代手写 XML、PO、Mapper 等重复工作
-        - 想要将数据库结构与代码映射统一管理的团队与个人开发者
+        🎯 Suitable Scenarios:
+        - Rapid MyBatis module development
+        - Replacing repetitive manual work for XML, PO, and Mapper files
+        - Ideal for developers and teams seeking unified database-to-code mapping
 
-        插件完全运行于 IntelliJ IDEA 中，支持最新版本，无需额外配置。
+        MyBatisMate runs entirely within IntelliJ IDEA (latest version supported) without any additional configuration.
 
-        本插件将数据库能力与代码生成逻辑高度结合，助你构建更清晰、更高效的后端开发流程。
+        This plugin tightly integrates database capabilities with code generation logic to help you build a cleaner and
+        more efficient backend development process.
     </description>
 
     <change-notes>
-        初始版本 1.0.0：
-        - 支持一键生成 MyBatis PO、Mapper、XML 文件
-        - 支持 SQL 自动补全与模板生成
-        - 支持 结构配置与定制路径生成
+        Version 1.0.0:
+        - Initial release with core features
+        - Supports one-click generation of MyBatis PO, Mapper, and XML files
+        - Includes SQL auto-completion and template generation
+        - Enables structure-based configuration and custom output paths
     </change-notes>
-
+    <resource-bundle>messages.MyBatisMateBundle</resource-bundle>
     <version>1.0.0</version>
     <idea-version since-build="232" until-build="241.*"/>
 
@@ -37,11 +41,11 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
-    <actions>
-        <action id="MyBatisMate.database.launcher.action"
+    <actions resource-bundle="messages.MyBatisMateBundle">
+        <action id="MyBatisMate.launcher.menu"
                 class="com.qm.plugin.mybatismate.action.LauncherMenuAction"
-                text="MyBatis 生成器"
-                description="MyBatis 生成器">
+                icon="/icons/launcher_menu.svg"
+        >
             <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
         </action>
     </actions>

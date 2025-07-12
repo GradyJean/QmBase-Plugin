@@ -7,6 +7,7 @@ import com.qm.plugin.mybatismate.model.code.EntityClassMeta;
 import com.qm.plugin.mybatismate.model.code.JavaClassMeta;
 import com.qm.plugin.mybatismate.model.table.TableMeta;
 import com.qm.plugin.mybatismate.psi.JavaPsiGenerator;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 import com.qm.plugin.mybatismate.util.NameConverter;
 import com.qm.plugin.mybatismate.util.PsiTypeResolver;
 
@@ -73,7 +74,7 @@ public class MapperGenerator extends JavaPsiGenerator {
         PsiMethod method = factory.createMethod(methodName, entityPsiType);
         Objects.requireNonNull(method.getBody()).delete();
         // 添加注释
-        addMethodComment(method, "根据主键查询实体");
+        addMethodComment(method, MessageBundle.message("codegen.comment.mapper.findByX"));
         // 创建参数
         PsiParameter primaryKeyParameter = factory.createParameter(primaryKey, primaryKeyField.getType());
         // 添加参数
@@ -94,7 +95,7 @@ public class MapperGenerator extends JavaPsiGenerator {
         PsiMethod method = factory.createMethod("findAll", listEntityType);
         Objects.requireNonNull(method.getBody()).delete();
         // 添加注释
-        addMethodComment(method, "查询所有实体记录");
+        addMethodComment(method, MessageBundle.message("codegen.comment.mapper.findAll"));
         psiClass.add(method);
     }
 
@@ -104,7 +105,7 @@ public class MapperGenerator extends JavaPsiGenerator {
         // 创建方法
         PsiMethod method = factory.createMethod("insert", PsiTypeResolver.javaClassToPsiType(int.class));
         Objects.requireNonNull(method.getBody()).delete();
-        addMethodComment(method, "插入数据");
+        addMethodComment(method, MessageBundle.message("codegen.comment.mapper.insert"));
         // 创建参数
         PsiParameter primaryKeyParameter = factory.createParameter("entity", entityPsiType);
         // 添加参数
@@ -120,7 +121,7 @@ public class MapperGenerator extends JavaPsiGenerator {
         PsiMethod method = factory.createMethod(methodName, PsiTypeResolver.javaClassToPsiType(int.class));
         Objects.requireNonNull(method.getBody()).delete();
         // 添加注释
-        addMethodComment(method, "根据主键更新记录");
+        addMethodComment(method, MessageBundle.message("codegen.comment.mapper.updateByX"));
         // 创建参数
         PsiParameter primaryKeyParameter = factory.createParameter("entity", entityPsiType);
         // 添加参数
@@ -136,7 +137,7 @@ public class MapperGenerator extends JavaPsiGenerator {
         PsiMethod method = factory.createMethod(methodName, PsiTypeResolver.javaClassToPsiType(int.class));
         Objects.requireNonNull(method.getBody()).delete();
         // 添加注释
-        addMethodComment(method, "根据主键删除记录");
+        addMethodComment(method, MessageBundle.message("codegen.comment.mapper.deleteByX"));
         // 创建参数
         PsiParameter primaryKeyParameter = factory.createParameter(primaryKey, primaryKeyField.getType());
         // 添加参数

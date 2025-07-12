@@ -4,6 +4,7 @@ import com.intellij.ui.JBColor;
 import com.intellij.util.ui.JBUI;
 import com.qm.plugin.mybatismate.model.dir.DirChooserMeta;
 import com.qm.plugin.mybatismate.model.dir.DirMeta;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,14 +48,15 @@ public class DirChooserBox extends JPanel {
         gbc.gridx = 1;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        suffixField = generateTextField("统一名称后缀,例如: User" + dirChooserMeta.getDefaultSuffix() + "." + dirChooserMeta.getFileSuffix(), SUFFIX_FIELD_SIZE);
+        String tipText = " User" + dirChooserMeta.getDefaultSuffix() + "." + dirChooserMeta.getFileSuffix();
+        suffixField = generateTextField(MessageBundle.message("component.DirChooserBox.suffixField.text", tipText), SUFFIX_FIELD_SIZE);
         add(suffixField, gbc);
 
         // 路径输入框
         gbc.gridx = 2;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        dirPathField = generateTextField("请选择目录", PATH_FIELD_SIZE);
+        dirPathField = generateTextField(MessageBundle.message("component.DirChooserBox.dirPathField.text"), PATH_FIELD_SIZE);
         dirPathField.setEditable(true);
         dirPathField.addMouseListener(new MouseAdapter() {
             @Override
@@ -113,7 +115,7 @@ public class DirChooserBox extends JPanel {
 
     public void setDirPath(String dirPath) {
         if (dirPath == null || dirPath.isEmpty()) {
-            dirPathField.setText("请选择目录");
+            dirPathField.setText(MessageBundle.message("component.DirChooserBox.dirPathField.text"));
             dirPathField.setForeground(JBColor.GRAY);
         } else {
             dirPathField.setText(dirPath);

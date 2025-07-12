@@ -11,6 +11,7 @@ import com.qm.plugin.mybatismate.ui.component.DataTable;
 import com.qm.plugin.mybatismate.ui.component.DirChooserBox;
 import com.qm.plugin.mybatismate.ui.component.GroupCheckBox;
 import com.qm.plugin.mybatismate.ui.component.ProjectTree;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -44,7 +45,7 @@ public class MainDialog extends DialogWrapper {
         // 设置对话框不允许调整大小
         setResizable(false);
         // 设置对话框标题
-        setTitle("Mybatis 生成器");
+        setTitle(MessageBundle.message("main.dialog.title"));
         centerPanel = new JPanel();
         // 设置面板大小
         centerPanel.setPreferredSize(new Dimension(800, 600));
@@ -56,8 +57,8 @@ public class MainDialog extends DialogWrapper {
         gbc.fill = GridBagConstraints.NONE;
         gbc.weightx = 0;
         // 设置对话框的默认按钮
-        getOKAction().putValue(Action.NAME, "开始生成");
-        getCancelAction().putValue(Action.NAME, "取消");
+        getOKAction().putValue(Action.NAME, MessageBundle.message("main.dialog.ok"));
+        getCancelAction().putValue(Action.NAME, MessageBundle.message("main.dialog.cancel"));
     }
 
     /**
@@ -95,7 +96,7 @@ public class MainDialog extends DialogWrapper {
         gbc.gridy = 1;
         gbc.weighty = 0;
         gbc.gridwidth = 2;
-        entityChooserBox = new DirChooserBox(new DirChooserMeta("实体类", "", "java"));
+        entityChooserBox = new DirChooserBox(new DirChooserMeta(MessageBundle.message("component.DirChooserBox.entity.title"), "", "java"));
         gbc.fill = GridBagConstraints.HORIZONTAL;
         centerPanel.add(entityChooserBox, gbc);
 
@@ -104,7 +105,7 @@ public class MainDialog extends DialogWrapper {
         gbc.gridy = 2;
         gbc.weighty = 0;
         gbc.gridwidth = 2;
-        mapperChooserBox = new DirChooserBox(new DirChooserMeta("Mapper", "Mapper", "java"));
+        mapperChooserBox = new DirChooserBox(new DirChooserMeta(MessageBundle.message("component.DirChooserBox.mapper.title"), "Mapper", "java"));
         centerPanel.add(mapperChooserBox, gbc);
 
         // mapperXmlChooserBox
@@ -112,7 +113,7 @@ public class MainDialog extends DialogWrapper {
         gbc.gridy = 3;
         gbc.weighty = 0;
         gbc.gridwidth = 2;
-        mapperXmlChooserBox = new DirChooserBox(new DirChooserMeta("Mapper XML", "Mapper", "xml"));
+        mapperXmlChooserBox = new DirChooserBox(new DirChooserMeta(MessageBundle.message("component.DirChooserBox.mapper.xml.title"), "Mapper", "xml"));
         centerPanel.add(mapperXmlChooserBox, gbc);
 
         // groupCheckBox

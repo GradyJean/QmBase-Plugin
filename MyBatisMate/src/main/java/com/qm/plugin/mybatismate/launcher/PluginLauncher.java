@@ -12,6 +12,7 @@ import com.qm.plugin.mybatismate.model.code.CodeGenMeta;
 import com.qm.plugin.mybatismate.model.dir.DirMeta;
 import com.qm.plugin.mybatismate.model.table.TableMeta;
 import com.qm.plugin.mybatismate.ui.dialog.MainDialog;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 import com.qm.plugin.mybatismate.ui.icon.PluginIcon;
 
 import java.util.ArrayList;
@@ -50,10 +51,10 @@ public class PluginLauncher {
         // 提示:生成文件将覆盖已有内容
         int result = Messages.showOkCancelDialog(
                 project,
-                "Tips:生成文件将覆盖已有内容，是否继续？",
-                "确认操作",
-                "继续生成",
-                "取消",
+                MessageBundle.message("execute.message.dialog.info"),
+                MessageBundle.message("execute.message.dialog.title"),
+                MessageBundle.message("execute.message.dialog.ok"),
+                MessageBundle.message("execute.message.dialog.cancel"),
                 Messages.getQuestionIcon()
         );
         if (result != Messages.OK) {
@@ -92,31 +93,31 @@ public class PluginLauncher {
             switch (dirMeta.getDirType()) {
                 case ENTITY -> {
                     if (dirPath.isEmpty()) {
-                        showErrorDialog("实体类路径不能为空");
+                        showErrorDialog(MessageBundle.message("validate.dirInfos.entity.empty.path"));
                         return false;
                     }
                     if (!dirPath.matches(javaPattern)) {
-                        showErrorDialog("实体类路径必须包含 src/main/java");
+                        showErrorDialog(MessageBundle.message("validate.dirInfos.entity.contain.path"));
                         return false;
                     }
                 }
                 case MAPPER -> {
                     if (dirPath.isEmpty()) {
-                        showErrorDialog("Mapper路径不能为空");
+                        showErrorDialog(MessageBundle.message("validate.dirInfos.mapper.empty.path"));
                         return false;
                     }
                     if (!dirPath.matches(javaPattern)) {
-                        showErrorDialog("Mapper路径必须包含 src/main/java");
+                        showErrorDialog(MessageBundle.message("validate.dirInfos.mapper.contain.path"));
                         return false;
                     }
                 }
                 case MAPPER_XML -> {
                     if (dirPath.isEmpty()) {
-                        showErrorDialog("Mapper XML 路径不能为空");
+                        showErrorDialog(MessageBundle.message("validate.dirInfos.mapperXml.empty.path"));
                         return false;
                     }
                     if (!dirPath.matches(resourcePattern)) {
-                        showErrorDialog("Mapper XML路径必须包含 src/main/resources");
+                        showErrorDialog(MessageBundle.message("validate.dirInfos.mapperXml.contain.path"));
                         return false;
                     }
                 }
@@ -131,7 +132,12 @@ public class PluginLauncher {
      *
      */
     private void addTableData() {
-        String[] headers = {"状态", "表名", "注释", "字段数量", "主键"};
+        String state = MessageBundle.message("data.tableData.header.state");
+        String tableName = MessageBundle.message("data.tableData.header.tableName");
+        String comment = MessageBundle.message("data.tableData.header.comment");
+        String columnCount = MessageBundle.message("data.tableData.header.columnCount");
+        String primaryKeys = MessageBundle.message("data.tableData.header.primaryKeys");
+        String[] headers = {state, tableName, comment, columnCount, primaryKeys};
         Object[][] data = new Object[tableMetas.size()][5];
         for (int i = 0; i < tableMetas.size(); i++) {
             TableMeta meta = tableMetas.get(i);
@@ -161,6 +167,6 @@ public class PluginLauncher {
     }
 
     private void showErrorDialog(String message) {
-        Messages.showErrorDialog(project, message, "错误");
+        Messages.showErrorDialog(project, message, MessageBundle.message("dialog.message.error"));
     }
 }

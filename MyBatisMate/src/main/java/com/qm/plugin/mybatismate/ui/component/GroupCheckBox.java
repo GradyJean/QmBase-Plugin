@@ -1,6 +1,7 @@
 package com.qm.plugin.mybatismate.ui.component;
 
 import com.qm.plugin.mybatismate.model.checkbox.CheckBoxMeta;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 
 import javax.swing.*;
 
@@ -15,13 +16,13 @@ public class GroupCheckBox extends JPanel {
     }
 
     private void init() {
-        useLombokCheckBox = new JCheckBox("使用 Lombok");
-        useLombokCheckBox.setToolTipText("启用 Lombok 注解以简化代码编写");
+        useLombokCheckBox = new JCheckBox(MessageBundle.message("component.GroupCheckBox.useLombok.title"));
+        useLombokCheckBox.setToolTipText(MessageBundle.message("component.GroupCheckBox.useLombok.tip"));
         useLombokCheckBox.setSelected(false); // 默认选中
         add(useLombokCheckBox);
         add(Box.createHorizontalStrut(10)); // 添加间隔
-        generateMapperBaseMethodCheckBox = new JCheckBox("生成 Mapper 基础方法");
-        generateMapperBaseMethodCheckBox.setToolTipText("生成 Mapper CRUD基础方法");
+        generateMapperBaseMethodCheckBox = new JCheckBox(MessageBundle.message("component.GroupCheckBox.generateMapperBase.title"));
+        generateMapperBaseMethodCheckBox.setToolTipText(MessageBundle.message("component.GroupCheckBox.generateMapperBase.tip"));
         generateMapperBaseMethodCheckBox.setSelected(true); // 默认选中
         add(generateMapperBaseMethodCheckBox);
     }

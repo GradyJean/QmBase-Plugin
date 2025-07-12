@@ -1,6 +1,7 @@
 package com.qm.plugin.mybatismate.ui.component;
 
 import com.intellij.ui.table.JBTable;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -38,7 +39,7 @@ public class DataTable extends JScrollPane {
 
     private void addDeleteMenu() {
         JPopupMenu popupMenu = new JPopupMenu();
-        JMenuItem deleteItem = new JMenuItem("删除");
+        JMenuItem deleteItem = new JMenuItem(MessageBundle.message("component.DataTable.menuItem.delete.text"));
         // 设置表格的选择模式
         table.addMouseListener(new MouseAdapter() {
             @Override

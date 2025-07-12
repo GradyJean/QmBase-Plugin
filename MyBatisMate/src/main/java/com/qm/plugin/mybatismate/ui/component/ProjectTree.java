@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.treeStructure.Tree;
 import com.intellij.util.IconUtil;
 import com.qm.plugin.mybatismate.context.GlobalContext;
+import com.qm.plugin.mybatismate.ui.i18n.MessageBundle;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -39,9 +40,9 @@ public class ProjectTree extends JScrollPane {
         tree.setCellRenderer(new FileTreeCellRenderer(project));
         // 添加右键菜单
         JPopupMenu popupMenu = new JPopupMenu();
-        JMenuItem entityItem = new JMenuItem("实体类");
-        JMenuItem mapperItem = new JMenuItem("Mapper");
-        JMenuItem xmlItem = new JMenuItem("MapperXML");
+        JMenuItem entityItem = new JMenuItem(MessageBundle.message("component.ProjectTree.menuItem.entity"));
+        JMenuItem mapperItem = new JMenuItem(MessageBundle.message("component.ProjectTree.menuItem.mapper"));
+        JMenuItem xmlItem = new JMenuItem(MessageBundle.message("component.ProjectTree.menuItem.mapperXml"));
         entityItem.setActionCommand("entity");
         mapperItem.setActionCommand("mapper");
         xmlItem.setActionCommand("xml");

@@ -27,7 +27,6 @@ intellijPlatform {
         ideaVersion {
             sinceBuild = "251"
         }
-
         changeNotes = """
         一个用于 MyBatis 框架的代码辅助插件。
         提供自动生成 mapper、PO、XML 等能力，极大提升开发效率。
