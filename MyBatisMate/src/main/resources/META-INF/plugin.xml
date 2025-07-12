@@ -4,21 +4,54 @@
     <name>MyBatisMate</name>
     <vendor url="https://github.com/GradyJean/QmBase-Plugin" email="grady.jean.king@gmail.com">QmBase</vendor>
     <description><![CDATA[
-        <b>MyBatisMate</b> is a powerful plugin for IntelliJ IDEA that enhances productivity when working on MyBatis-based projects.
-        <br><br>
-        <b>🔧 Key Features:</b><br>
-        - Auto-detects database schemas and column types<br>
-        - Generates POJOs, Mapper interfaces, and XML with one click<br>
-        - Inserts ResultMaps and SQL templates to reduce boilerplate<br>
-        - Supports navigation, code completion, and annotations<br>
-        - Customizable naming and output paths<br><br>
+    <b>MyBatisMate</b> is a powerful plugin for IntelliJ IDEA that enhances productivity when working on MyBatis-based projects.
+    <br><br>
+    <b>🔧 Key Features:</b><br>
+    - Auto-detects database schemas and column types<br>
+    - Generates POJOs, Mapper interfaces, and XML with one click<br>
+    - Inserts ResultMaps and SQL templates to reduce boilerplate<br>
+    - Supports navigation, code completion, and annotations<br>
+    - Customizable naming and output paths<br><br>
 
-        <b>🎯 Ideal for:</b><br>
-        - Fast MyBatis module scaffolding<br>
-        - Reducing repetitive work for Mapper, PO, and XML files<br>
-        - Teams needing consistent DB-to-code mapping<br><br>
+    <b>🎯 Ideal for:</b><br>
+    - Fast MyBatis module scaffolding<br>
+    - Reducing repetitive work for Mapper, PO, and XML files<br>
+    - Teams needing consistent DB-to-code mapping<br><br>
 
-        Runs fully inside IntelliJ IDEA with no extra config.
+    <b>🚀 How to Use:</b><br>
+    - Right-click a database table in the <b>Database Tool Window</b><br>
+    - Choose <b>"MyBatis Generator"</b> from the context menu<br>
+    - In the dialog, choose output directories and naming options<br>
+    - You can auto-fill the output directory by right-clicking in the left-side project tree, or paste the path manually<br>
+    - Click <b>Generate</b> to create Entity, Mapper, and XML files instantly<br><br>
+
+    Runs fully inside IntelliJ IDEA with no extra config.<br><br>
+    <b>🔗 GitHub:</b> <a href="https://github.com/GradyJean/QmBase-Plugin">github.com/GradyJean/QmBase-Plugin</a>
+    <br><br>
+    <b>📘 插件介绍（中文）</b><br>
+    <b>MyBatisMate</b> 是一款专为 MyBatis 项目设计的 IntelliJ IDEA 插件，帮助开发者高效生成代码与配置文件。
+    <br><br>
+    <b>🔧 主要功能：</b><br>
+    - 自动识别数据库表结构与字段类型<br>
+    - 一键生成实体类（PO）、Mapper 接口与 XML 配置<br>
+    - 自动插入 ResultMap 与 SQL 模板，减少重复代码<br>
+    - 支持导航、代码补全与注解增强<br>
+    - 支持自定义命名规则与输出路径<br><br>
+
+    <b>🎯 适用场景：</b><br>
+    - 快速搭建 MyBatis 模块<br>
+    - 批量生成重复性 Mapper、实体类和 XML 文件<br>
+    - 团队对数据库到代码的映射规范有一致性要求<br><br>
+
+    <b>🚀 使用方法：</b><br>
+    - 在 <b>Database 工具窗口</b> 右键点击数据表<br>
+    - 选择右键菜单中的 <b>“MyBatis 生成器”</b><br>
+    - 在弹出窗口中配置输出目录与命名规则<br>
+    - 输出目录可以在左侧项目树中右键自动填充,或者复制路径填充<br>
+    - 点击 <b>生成</b> 按钮，自动生成 Entity、Mapper 和 XML 文件<br><br>
+
+    插件完全运行于 IntelliJ IDEA 中，无需额外配置。<br><br>
+    <b>🔗 GitHub:</b> <a href="https://github.com/GradyJean/QmBase-Plugin">github.com/GradyJean/QmBase-Plugin</a>
                 ]]>
     </description>
 
